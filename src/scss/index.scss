@@ -1,0 +1,238 @@
+// ======= CUSTOMISATION ===================================================
+// Custom colors
+$primary: #0074d9;
+$danger: #ff4136;
+
+$bg: #ffffff;
+
+$bg-elv: #252529;
+$bg-elv-up: #313136;
+$bg-elv-down: #1e1e20;
+$bg-elv-mute: #313136;
+
+$bg-soft: #252529;
+$bg-soft-up: #313136;
+$bg-soft-down: #1e1e20;
+$bg-soft-mute: #313136;
+
+$sidebar-bg-color: #161618;
+
+$brand: #92e3a9;
+$brand-dark: #7ede99;
+$brand-darker: #69d989;
+$brand-darkest: #55d379;
+
+$dark-1: rgb(63, 63, 68);
+$dark-2: rgba(60, 60, 67, 0.75);
+$dark-3: rgba(60, 60, 67, 0.33);
+$light-1: rgba(255, 255, 245, 0.86);
+$light-2: rgba(235, 235, 245, 0.6);
+$light-3: rgba(235, 235, 245, 0.38);
+
+// Import the functions and variables
+@import "../../node_modules/bootstrap/scss/_functions";
+@import "../../node_modules/bootstrap/scss/_variables";
+
+// Add custom colors to Bootstrap
+
+// Default variable overrides
+$body-bg: $bg;
+$body-color: $dark-1;
+
+$theme-colors: (
+  "primary": $primary,
+  "danger": $danger,
+);
+
+$custom-colors: (
+  "bg-elv": $bg-elv,
+  "bg-elv-up": $bg-elv-up,
+  "bg-elv-down": $bg-elv-down,
+  "bg-elv-mute": $bg-elv-mute,
+
+  "bg-soft": $bg-soft,
+  "bg-soft-up": $bg-soft-up,
+  "bg-soft-down": $bg-soft-down,
+  "bg-soft-mute": $bg-soft-mute,
+
+  "sidebar-bg-color": $sidebar-bg-color,
+
+  "light-1": $light-1,
+  "light-2": $light-2,
+  "light-3": $light-3,
+
+  "dark-1": $dark-1,
+  "dark-2": $dark-2,
+  "dark-3": $dark-3,
+
+  "brand": $brand,
+  "brand-dark": $brand-dark,
+  "brand-darker": $brand-darker,
+  "brand-darkest": $brand-darkest,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Import Bootstrap, Animate css
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/animate.css/animate.css";
+
+// Import Google fonts
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+// Font families
+$font-primary: "Mulish", sans-serif;
+$font-header: "Saira Extra Condensed", sans-serif;
+
+// Padding for main sections
+$padding: 6.25rem;
+
+// Font sizes
+$fs-208: 13rem;
+$fs-176: 11rem;
+$fs-112: 7rem;
+$fs-88: 5.5rem;
+$fs-72: 4.5rem;
+$fs-56: 3.5rem;
+$fs-48: 3rem;
+$fs-40: 2.5rem;
+$fs-32: 2rem;
+$fs-24: 1.5rem;
+$fs-18: 1.125rem;
+$fs-16: 1rem;
+$fs-14: 0.875rem;
+$fs-12: 0.75rem;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($duration) {
+  -moz-transition: all $duration ease-in-out;
+  -o-transition: all $duration ease-in-out;
+  -webkit-transition: all $duration ease-in-out;
+  -ms-transition: all $duration ease-in-out;
+  transition: all $duration ease-in-out;
+}
+
+// ======= GENERAL CSS ===================================================
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-primary;
+  @include media-breakpoint-down(md) {
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $font-header;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+section {
+  padding-top: 4.5rem;
+  border-top: 15px solid $brand-darkest;
+}
+
+// Menu
+.menu-item {
+  color: $brand-darkest;
+  font-size: $fs-18;
+  font-weight: 500;
+  @include media-breakpoint-down(md) {
+    font-size: $fs-16;
+  }
+
+  &:hover {
+    color: $brand;
+    background-color: $dark-1;
+  }
+
+  &:active {
+    color: $brand;
+    background-color: $dark-1;
+  }
+
+  &.active {
+    color: $brand;
+    background-color: $dark-1;
+  }
+}
+
+.heading {
+  font-size: $fs-176;
+  line-height: 80%;
+  @include media-breakpoint-down(md) {
+    font-size: $fs-88;
+  }
+}
+
+.subheading {
+  font-size: $fs-72;
+  font-weight: 700;
+  line-height: 80%;
+  @include media-breakpoint-down(md) {
+    font-size: $fs-48;
+  }
+}
+
+.and-sign,
+.first-character {
+  font-size: $fs-208;
+  @include media-breakpoint-down(md) {
+    font-size: $fs-112;
+  }
+}
+
+// #experience,
+// #projects,
+// #contact {
+//   border-top: 15px solid $brand-dark;
+// }
